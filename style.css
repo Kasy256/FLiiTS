@@ -1,0 +1,308 @@
+* {
+    text-decoration: none;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.headercontainer {
+    background-color: white;
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed; /*makes the header container fixed at the top*/
+    width: 100%;
+}
+ul {
+    list-style: none;
+}
+ul li {
+    display: inline-block;
+}
+ul li a {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+button {
+    background-color: gold;
+    border: none;
+    border-radius: 20px;
+    max-width: fit-content;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+button a {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+button:hover {
+    background-color: black;
+    transition: 5ms;
+}
+button a:hover {
+    color: white;
+}
+a:hover {
+    color: gold;
+}
+.logo a {
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+}
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    min-width: 150px;
+    z-index: 1;
+    left: 0;
+    transform: translateX(700%);
+    margin-top: 10px;
+}
+ul li:hover .dropdown-menu {
+    display: block;
+}
+#menu {
+    background: transparent;
+    border-radius: 5px;
+    text-align: left;
+    padding: 0;
+}
+#menu a {
+    display: block;
+    font-size: 15px;
+    color: black;
+    padding: 10px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+}
+#menu a:hover {
+    background-color: gold;
+    color: white;
+}
+.hero {
+    background-color: black;
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('images/hero.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.booking {
+    background-color: rgba(239, 236, 236, 0.9);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    flex-wrap: wrap;
+}
+.booking label {
+    font-size: 20px;
+    font-weight: bold;
+}
+.booking input {
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    background-color: white;
+    width: 200px;
+}
+.booking input[type="text"] {
+    background-color: transparent;
+    border: none solid gray;
+    padding: 0px;
+    width: 100px;
+    transition: width 0.3s ease;
+}
+.booking input[type="date"]:focus,
+.booking input[type="time"]:focus {
+    width: 90px;
+}
+#search {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.separator {
+    display: inline-block;
+    width: 1px;
+    height: 40px;
+    background-color: gray;
+    margin: 0 10px;
+}
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+.content-text {
+    flex: 1;
+}
+.content-image {
+    flex: 1;
+}
+.content-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.word {
+    background-color: transparent;
+    padding: 0;
+    margin: 10px 0;
+    font-family: 'Segoe UI';
+    font-size: 30px;
+    text-align: center;
+}
+.heading {
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+/* Responsiveness for the content section*/
+@media (max-width: 800px) {
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-image,
+    .content-text {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+    .content-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+/* Responsiveness for the booking section*/
+@media (max-width: 800px) {
+    .booking {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .booking label,
+    .booking input,
+    #search {
+        width: 100%;
+        max-width: 300px;
+    }
+    .separator {
+        display: none;
+    }
+}
+.works{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+.Host-list, .rider-list{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+}
+/* Responsiveness for the works section*/
+@media (max-width: 800px) {
+    .works{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Host-list,
+    .rider-list {
+        flex: none;
+        text-align: center;
+        max-width: 100%;
+        height: auto;
+    }
+}
+.cars{
+    background-color: transparent;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.cards{
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+.label1{
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.review-section{
+    background-color: #D9D9D9;
+    width:100%;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+.reviews{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.review-card{
+    background-color: white;
+    width: 20%;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+}
+.review-image  img{
+    border-radius: 100px;
+    width: 50%;
+    position: relative;
+    padding: 10px;
+}
+.review-message{
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 15px;
+}
